@@ -1,0 +1,30 @@
+﻿<div class="card text-white bg-secondary mb-3">
+    <div class="card-header">Rock Paper Scissors</div>
+    <div class="card-body">
+        <!--<h4 class="card-title">Primary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+        <div class="form-group">
+            <label for="gameTypeSelection" class="form-label mt-4">Select Play Type</label>
+            <select class="form-select" id="gameTypeSelection" ng-model="$ctrl.currentGameTypeSelection" ng-change="$ctrl.gameTypeSelectionChange()">
+                <option value="PVC">Player vs Computer</option>
+                <option value="CVC">Computer vs Computer</option>
+                <option value="DET">Different each time</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mt-4">
+                <h2>Player1 score : {{$ctrl.scores.playerOneScore}}</h2>
+                <rps-selection on-selection-change="$ctrl.onPlayerSelectionChange(selectedOption)" selection="$ctrl.playerOneRPSSelection"></rps-selection>
+                <div style="color:red" class="text-warning" ng-if="$ctrl.playerOneRPSSelection === null">Make your selection</div>
+            </div>
+            <div class="col-md-2 mt-4">
+                <h2>{{$ctrl.winnerText}}</h2>
+                <button class="btn btn-lg btn-primary" type="button" ng-if="$ctrl.showReplayGameOption" ng-click="$ctrl.replayGame()">Play Again</button>
+            </div>
+            <div class="col-md-5 mt-4" >
+                <h2>Player2 score : {{$ctrl.scores.playerTwoScore}} </h2>
+                <rps-selection selection="$ctrl.playerTwoRPSSelection"></rps-selection>
+            </div>
+        </div>
+    </div>
+</div>

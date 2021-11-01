@@ -128,10 +128,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\paper.png" />
+    <Content Include="Content\assets\rock.png" />
+    <Content Include="Content\assets\scissors.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\views\game\game.html" />
+    <Content Include="Content\views\game\rpsSelection.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -139,6 +144,12 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\constants.js" />
+    <Content Include="Scripts\app\game.js" />
+    <Content Include="Scripts\app\gameService.js" />
+    <Content Include="Scripts\app\index.js" />
+    <Content Include="Scripts\app\rpsSelection.js" />
+    <Content Include="Scripts\app\sessionStorageService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -172,7 +183,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
