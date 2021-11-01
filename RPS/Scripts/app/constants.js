@@ -2,7 +2,7 @@
     RPSGameResult: {
         PlayerOne: 1,
         PlayerTwo: 2,
-        PlayerThree: 3
+        Draw: 3
     },
     RPSGameSelectedOption: {
         Rock: 1,

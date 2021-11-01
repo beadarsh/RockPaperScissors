@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bal
+namespace Bal.Models
 {
-    public class Class1
+    public enum RPSGameResult
     {
+        PlayerOne = 1,
+        PlayerTwo = 2,
+        Draw = 3
     }
 }

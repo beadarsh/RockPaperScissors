@@ -5,14 +5,16 @@
         ctrl.winnerText = "";
 
         ctrl.gameTypeSelectionChange = function () {
-            // alert(ctrl.currentGameTypeSelection);
             ctrl.resetSelectionChange();
-            ctrl.fetchMatchResults();
         };
 
         ctrl.resetSelectionChange = function () {
             ctrl.resetSelectionForPlayerOne();
             ctrl.resetSelectionForPlayerTwo();
+            ctrl.winnerText = "";
+            if (ctrl.playerOneRPSSelection != null) {
+                ctrl.fetchMatchResults();
+            }
         };
 
         ctrl.resetSelectionForPlayerOne = function () {
@@ -27,22 +29,21 @@
 
         ctrl.resetSelectionForPlayerTwo = function () {
             if (ctrl.lastPlayedGameType === Constants.PlayerVsComputerOption) {
-                ctrl.player2RPSSelection = null;
+                ctrl.playerTwoRPSSelection = null;
                 return;
             }
-            ctrl.player2RPSSelection = ctrl.getRandomSelection();
+            ctrl.playerTwoRPSSelection = ctrl.getRandomSelection();
         };
 
         ctrl.onPlayerSelectionChange = function (playerOneSelection) {
             ctrl.playerTwoRPSSelection = ctrl.getRandomSelection();
             ctrl.playerOneRPSSelection = playerOneSelection;
             ctrl.fetchMatchResults();
-            // alert(playerOneSelection);
         };
 
         ctrl.fetchMatchResults = function () {
             GameService
-                .fetchResultForPlayerOptions(ctrl.playerOneRPSSelection, ctrl.player2RPSSelection)
+                .fetchResultForPlayerOptions(ctrl.playerOneRPSSelection, ctrl.playerTwoRPSSelection)
                 .then(ctrl.successCallback, ctrl.errorCallback);
         };
 
@@ -72,7 +73,7 @@
         }
 
         ctrl.updateScores = function (result) {
-            switch (Constants.RPSGameResult[result]) {
+            switch (result) {
                 case Constants.RPSGameResult.PlayerOne:
                     ctrl.scores.playerOneScore++;
                     SessionStorageService.saveScores(ctrl.scores.playerOneScore, ctrl.scores.playerTwoScore);

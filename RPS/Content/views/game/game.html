@@ -13,16 +13,16 @@
         </div>
         <div class="row">
             <div class="col-md-5 mt-4">
-                <h2>Player1 score : {{$ctrl.scores.playerOneScore}}</h2>
+                <h3>Player1 score : {{$ctrl.scores.playerOneScore}}</h3>
                 <rps-selection on-selection-change="$ctrl.onPlayerSelectionChange(selectedOption)" selection="$ctrl.playerOneRPSSelection"></rps-selection>
-                <div style="color:red" class="text-warning" ng-if="$ctrl.playerOneRPSSelection === null">Make your selection</div>
+                <div style="color:red" class="text-warning" ng-if="$ctrl.playerOneRPSSelection == null">Make your selection</div>
             </div>
             <div class="col-md-2 mt-4">
-                <h2>{{$ctrl.winnerText}}</h2>
-                <button class="btn btn-lg btn-primary" type="button" ng-if="$ctrl.showReplayGameOption" ng-click="$ctrl.replayGame()">Play Again</button>
+                <h5>{{$ctrl.winnerText}}</h5>
+                <button class="btn btn-lg btn-primary" type="button" ng-if="$ctrl.showReplayGameOption" ng-click="$ctrl.resetSelectionChange()">Play Again</button>
             </div>
             <div class="col-md-5 mt-4" >
-                <h2>Player2 score : {{$ctrl.scores.playerTwoScore}} </h2>
+                <h3>Player2 score : {{$ctrl.scores.playerTwoScore}} </h3>
                 <rps-selection selection="$ctrl.playerTwoRPSSelection"></rps-selection>
             </div>
         </div>
