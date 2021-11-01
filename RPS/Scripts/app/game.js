@@ -54,7 +54,7 @@
         }
 
         ctrl.errorCallback = function (response) {
-            // $window.alert(response.data.Message);
+            $window.alert(response.data);
         };
 
         ctrl.getRandomSelection = function () {
@@ -88,12 +88,9 @@
         }
 
         ctrl.$onInit = function () {
-            ctrl.currentGameTypeSelection = "PVC"; // Player vs Computer is the default option
-            ctrl.lastPlayedGameType = "PVC";
+            ctrl.currentGameTypeSelection = Constants.PlayerVsComputerOption; // Player vs Computer is the default option
+            ctrl.lastPlayedGameType = Constants.PlayerVsComputerOption;
             ctrl.scores = SessionStorageService.getScores();
-            // alert(ctrl.currentSelection);
-            // ctrl.playerOneRPSSelection = null;
-            //alert(Constants.RPSGameSelectedOption.Rock);
         }
     }
 

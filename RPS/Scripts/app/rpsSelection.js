@@ -9,9 +9,6 @@
                 ctrl.onSelectionChange({ selectedOption: value });
             }
         };
-        ctrl.$onInit = function () {
-            // alert(ctrl.selection);
-        };
     }
 
     angular.module('gameApp').component('rpsSelection', {
